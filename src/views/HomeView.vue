@@ -5,9 +5,15 @@ import ServicesSection from "@/components/organisms/services-section.vue";
 </script>
 
 <template>
-  <main class="homepage bg-primary">
+  <main class="homepage">
     <HeroSection />
     <ClientsList />
     <ServicesSection />
   </main>
 </template>
+
+<style lang="scss" scoped>
+.homepage {
+  width: 100%;
+}
+</style>

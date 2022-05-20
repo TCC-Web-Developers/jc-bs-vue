@@ -6,7 +6,6 @@ import img from "@/assets/herosection-img.png";
 
 <template>
   <div class="container">
-    <div class="spacer"></div>
     <div class="herosection-container d-flex flex-column flex-md-row">
       <div class="right-section">
         <HerosectionText />
@@ -24,10 +23,6 @@ import img from "@/assets/herosection-img.png";
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.spacer {
-  height: 10vh;
 }
 
 .herosection-container {
