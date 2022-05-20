@@ -3,11 +3,7 @@ const props = defineProps(["img"]);
 </script>
 
 <template>
-  <img :src="img" alt="" />
+  <img :src="img" alt="" class="w-50" />
 </template>
 
-<style lang="scss" scoped>
-img {
-  width: 50%;
-}
-</style>
+<style lang="scss" scoped></style>

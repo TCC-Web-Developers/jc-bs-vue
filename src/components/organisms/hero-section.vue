@@ -5,13 +5,16 @@ import img from "@/assets/herosection-img.png";
 </script>
 
 <template>
-  <div class="herosection-container container">
-    <div class="right-section">
-      <HerosectionText />
-    </div>
+  <div class="container">
+    <div class="spacer"></div>
+    <div class="herosection-container d-flex flex-column flex-md-row">
+      <div class="right-section">
+        <HerosectionText />
+      </div>
 
-    <div class="left-section">
-      <ImageContainer :img="img" />
+      <div class="left-section">
+        <ImageContainer :img="img" />
+      </div>
     </div>
   </div>
 </template>
@@ -23,9 +26,12 @@ import img from "@/assets/herosection-img.png";
   align-items: center;
 }
 
+.spacer {
+  height: 10vh;
+}
+
 .herosection-container {
-  display: flex;
-  height: 100vh;
+  height: 90vh;
 
   .right-section {
     @include display-center;

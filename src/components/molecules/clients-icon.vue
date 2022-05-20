@@ -8,23 +8,35 @@ import Samsung from "@/components/atoms/icons/samsung-icon.vue";
 </script>
 
 <template>
-  <ul>
-    <li>
+  <ul class="row">
+    <li
+      class="col-6 col-sm-4 col-lg d-flex align-items-center justify-content-center py-4 py-lg-0"
+    >
       <AdidasIcon />
     </li>
-    <li>
+    <li
+      class="col-6 col-sm-4 col-lg d-flex align-items-center justify-content-center py-4 py-lg-0"
+    >
       <Apple />
     </li>
-    <li>
+    <li
+      class="col-6 col-sm-4 col-lg d-flex align-items-center justify-content-center py-4 py-lg-0"
+    >
       <Google />
     </li>
-    <li>
+    <li
+      class="col-6 col-sm-4 col-lg d-flex align-items-center justify-content-center py-4 py-lg-0"
+    >
       <Intercom />
     </li>
-    <li>
+    <li
+      class="col-6 col-sm-4 col-lg d-flex align-items-center justify-content-center py-4 py-lg-0"
+    >
       <Nike />
     </li>
-    <li>
+    <li
+      class="col-6 col-sm-4 col-lg d-flex align-items-center justify-content-center py-4 py-lg-0"
+    >
       <Samsung />
     </li>
   </ul>
@@ -34,9 +46,6 @@ import Samsung from "@/components/atoms/icons/samsung-icon.vue";
 ul {
   list-style: none;
   padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 4rem;
+  width: 100%;
 }
 </style>
