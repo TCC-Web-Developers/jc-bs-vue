@@ -3,7 +3,7 @@ import NavigationBar from "@/components/organisms/navigation-bar.vue";
 </script>
 
 <template>
-  <main class="portfolio bg-primary w-100">
+  <main class="portfolio bg-primary w-100 pb-5">
     <NavigationBar />
     <div class="spacer"></div>
     <RouterView />

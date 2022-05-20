@@ -3,7 +3,7 @@
 <template>
   <div class="hero-section-text text-light text-center px-5">
     <h6 class="display-6">I'm Designer and Videographer</h6>
-    <h1 class="fw-bold display-1">JC DESIGN</h1>
+    <h1 class="fw-bold display-1">JC DESIGN STUDIO</h1>
     <p>
       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam,
       necessitatibus.

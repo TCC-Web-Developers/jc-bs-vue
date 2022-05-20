@@ -4,9 +4,9 @@ import NavigationLinks from "@/components/molecules/navigation-links.vue";
 </script>
 
 <template>
-  <nav class="navbar bg-secondary position-fixed w-100 py-0">
-    <div class="container">
-      <TitleLogo>JC DESIGNS</TitleLogo>
+  <nav class="navbar bg-secondary position-fixed w-100 py-0 shadow">
+    <div class="container h-100">
+      <TitleLogo>JC DESIGN STUDIO</TitleLogo>
       <NavigationLinks />
     </div>
   </nav>

@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <div class="card mb-3 w-100">
+  <div class="card mb-5 w-100">
     <div class="row g-0">
       <div class="col-md-4">
         <slot name="service-content-image"></slot>
