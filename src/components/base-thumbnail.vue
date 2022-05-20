@@ -1,5 +1,5 @@
 <template>
-  <div class="thumbail">hello</div>
+  <div class="thumbail">THUMBNAIL</div>
 </template>
 
 <style lang="scss" scoped></style>

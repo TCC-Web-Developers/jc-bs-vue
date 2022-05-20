@@ -1,22 +1,25 @@
 <script setup>
+import { computed } from "vue";
 import { RouterLink, useRouter } from "vue-router";
 
 const router = useRouter();
 
 const props = defineProps(["metadata"]);
 
-console.log(router.currentRoute.value.fullPath);
+const currentRoute = computed(() => {
+  return router.currentRoute.value.fullPath;
+});
 </script>
 
 <template>
   <RouterLink
     class="link px-3 py-2 h-100 d-flex align-items-center"
-    :class="[metadata.isActive ? 'fw-bold' : 'fw-normal']"
+    :class="[metadata.url === currentRoute ? 'fw-bold' : 'fw-normal']"
     :to="metadata.url"
   >
     {{ metadata.name }}
     <div
-      v-show="metadata.isActive"
+      v-show="metadata.url === currentRoute"
       class="current-link-indicator bg-primary"
     ></div>
   </RouterLink>
