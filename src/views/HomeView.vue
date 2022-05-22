@@ -1,19 +1,17 @@
-<script setup>
-import HeroSection from "@/components/organisms/hero-section.vue";
-import ClientsList from "@/components/organisms/clients-list.vue";
-import ServicesSection from "@/components/organisms/services-section.vue";
-</script>
+<script setup></script>
 
 <template>
-  <main class="homepage">
+  <main>
     <HeroSection />
-    <ClientsList />
     <ServicesSection />
+    <PortfolioSection />
+    <TestimonialSection/>
   </main>
 </template>
 
 <style lang="scss" scoped>
-.homepage {
+main {
+  min-height: 200vh;
   width: 100%;
 }
 </style>

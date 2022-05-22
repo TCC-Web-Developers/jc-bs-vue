@@ -1,44 +1,53 @@
 <script setup>
-import ImageContainer from "@/components/atoms/image-container.vue";
-import HerosectionText from "@/components/atoms/herosection-text.vue";
-import img from "@/assets/herosection-img.png";
+import HeroSectionImg from "@/assets/images/herosection-img.png";
 </script>
 
 <template>
-  <div class="container">
-    <div class="herosection-container d-flex flex-column flex-md-row">
-      <div class="right-section">
-        <HerosectionText />
-      </div>
+  <section class="hero-section bg-secondary">
+    <div class="container">
+      <div class="row">
+        <div
+          class="left-content col-12 col-md-6 text-center text-md-end d-flex align-items-center"
+        >
+          <div class="left-content text-primary-text-light pt-5 pt-md-0">
+            <header class="herosection-text">
+              <h6 class="text-accent fw-bold">
+                Web Design Expert | Product Designer
+              </h6>
+              <h1 class="display-5 fw-bolder">
+                JC WEB DESIGN <br />
+                STUDIO
+              </h1>
+              <p class="lead">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Cupiditate molestiae at odio.
+              </p>
+            </header>
+            <div
+              class="btns d-flex justify-content-center justify-content-md-end mt-4"
+            >
+              <button class="btn btn-accent text-primary-text-light">
+                Explore Now
+              </button>
+              <button class="btn btn-outline-primary btn-transparent ms-3">
+                Contact
+              </button>
+            </div>
+          </div>
+        </div>
 
-      <div class="left-section">
-        <ImageContainer :img="img" />
+        <div class="right-content col-12 col-md-6 d-flex align-items-center">
+          <img :src="HeroSectionImg" alt="herosection" class="img-fluid" />
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <style lang="scss" scoped>
-@mixin display-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.herosection-container {
-  height: 90vh;
-
-  .right-section {
-    @include display-center;
-    text-align: right;
-    height: 100%;
-    flex: 0.5;
-  }
-
-  .left-section {
-    @include display-center;
-    height: 100%;
-    flex: 0.5;
+.hero-section {
+  .container {
+    padding-bottom: 5rem;
   }
 }
 </style>

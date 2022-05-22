@@ -1,24 +1,18 @@
-<script setup>
-import NavigationBar from "@/components/organisms/navigation-bar.vue";
-</script>
+<script setup></script>
 
 <template>
-  <main class="portfolio bg-primary w-100 pb-5">
+  <div class="root-app">
     <NavigationBar />
     <div class="spacer"></div>
     <RouterView />
-  </main>
+    <FooterSection />
+  </div>
 </template>
 
 <style lang="scss">
-@import "@/assets/base.css";
-@import "@/assets/scss/custom.scss";
-
-.portfolio {
-  min-height: 100vh;
-
-  .spacer {
-    height: 10vh;
-  }
+@import "./assets/scss/custom.scss";
+.spacer {
+  height: 10vh;
+  width: 100%;
 }
 </style>

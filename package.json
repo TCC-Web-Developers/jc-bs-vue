@@ -1,5 +1,5 @@
 {
-  "name": "jc-bs-vue",
+  "name": "vue-practice",
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
@@ -8,7 +8,9 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "@popperjs/core": "^2.11.5",
     "bootstrap": "^5.1.3",
+    "bootstrap-icons": "^1.8.2",
     "sass": "^1.51.0",
     "vue": "^3.2.33",
     "vue-router": "^4.0.14"
@@ -17,6 +19,8 @@
     "@vitejs/plugin-vue": "^2.3.1",
     "eslint": "^8.5.0",
     "eslint-plugin-vue": "^8.2.0",
+    "unplugin-auto-import": "^0.7.2",
+    "unplugin-vue-components": "^0.19.5",
     "vite": "^2.9.5"
   }
 }

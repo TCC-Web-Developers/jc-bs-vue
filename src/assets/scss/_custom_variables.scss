@@ -1,0 +1,21 @@
+$primary: #f4f5ff;
+$secondary: #5a65dc;
+
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+);
+
+// Create your own map
+$custom-colors: (
+  "accent": #ff85b6,
+  "primary-text-dark": darken(#5fd0ba, 50%),
+  "primary-text-light": lighten(#5fd0ba, 50%),
+  "light": #ffffff,
+);
+
+// Merge the maps
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+$body-bg: $primary;
+$body-color: #424041;
