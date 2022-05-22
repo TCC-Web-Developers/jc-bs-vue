@@ -3,7 +3,7 @@
 <template>
   <div class="root-app">
     <NavigationBar />
-    <div class="spacer"></div>
+    <div class="spacer bg-secondary"></div>
     <RouterView />
     <FooterSection />
   </div>

@@ -1,20 +1,16 @@
 <template>
-  <section class="page-content py-5">
-    <div class="container d-flex py-5">
-      <div class="content-title w-50">
-        <h6 class="text-accent fw-bold mb-3">Services</h6>
-        <h3 class="fw-bold text-secondary w-50">
-          Digital agency is a business you hire to outsource your digital
-          marketing efforts
-        </h3>
-      </div>
-      <div class="content-text w-50">
-        <p class="lead">
+  <section class="about-info py-5">
+    <div class="container d-flex justify-content-center">
+      <div class="about-content text-start w-50">
+        <h5 class="fw-bold text-accent">JAKE CHRIST STARK</h5>
+        <h1 class="fw-bolder display-6">
+          PROFESSIONAL WEB DEVELOPER & GRAPHIC DESIGNER
+        </h1>
+        <p class="lead mt-5">
           Ability to put themselves in the merchant's shoes. It is meant to
           partner on the long run, and work as an extension of the merchant's
           team.
-        </p>
-        <p class="lead">
+          <br /><br />
           A digital agency is a business you hire to outsource your digital
           marketing efforts, instead of handling in-house. They can provide your
           business with a variety of digital solutions to promote your product

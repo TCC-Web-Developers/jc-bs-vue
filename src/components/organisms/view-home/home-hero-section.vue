@@ -9,16 +9,16 @@ import HeroSectionImg from "@/assets/images/herosection-img.png";
         <div
           class="left-content col-12 col-md-6 text-center text-md-end d-flex align-items-center"
         >
-          <div class="left-content text-primary-text-light pt-5 pt-md-0">
+          <div class="left-content text-primary-text-light pt-5 pt-lg-0">
             <header class="herosection-text">
               <h6 class="text-accent fw-bold">
                 Web Design Expert | Product Designer
               </h6>
-              <h1 class="display-5 fw-bolder">
-                JC WEB DESIGN <br />
+              <h1 class="display-4 fw-bolder">
+                JC DESIGN & DEVELOPMENT <br />
                 STUDIO
               </h1>
-              <p class="lead">
+              <p class="lead text-primary-text-light">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Cupiditate molestiae at odio.
               </p>

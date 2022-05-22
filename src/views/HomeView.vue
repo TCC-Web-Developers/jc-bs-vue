@@ -2,10 +2,11 @@
 
 <template>
   <main>
-    <HeroSection />
-    <ServicesSection />
-    <PortfolioSection />
-    <TestimonialSection/>
+    <HomeHeroSection />
+    <HomeServicesSection />
+    <HomePortfolioSection />
+    <HomeTestimonialSection />
+    <HomeClientsIcon />
   </main>
 </template>
 
