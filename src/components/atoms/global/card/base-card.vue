@@ -1,5 +1,5 @@
 <script setup>
-const props = defineProps(["color", "shadow", "hover"]);
+const props = defineProps(["color", "shadow", "hover", "rounded"]);
 const colorTypes = ref([
   "secondary",
   "primary",
@@ -14,11 +14,15 @@ const getCardColor = computed(() => {
 });
 
 const shadowEnable = computed(() => {
-  return props.shadow ? "shadow" : "";
+  return props.shadow;
 });
 
 const hoverEnable = computed(() => {
   return props.hover ? "hover" : "";
+});
+
+const roundedEnable = computed(() => {
+  return props.rounded;
 });
 </script>
 

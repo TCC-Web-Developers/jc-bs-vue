@@ -9,18 +9,21 @@ const projects = ref([
     title: "E-Commerce Design",
     text: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique, eaque!`,
     category: "UI/UX Design",
+    imgUrl: PortfolioImg,
   },
   {
     id: 1,
     title: "Coffee Shop Branding",
     text: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique, eaque!`,
     category: "Product Design",
+    imgUrl: ProductDesignImg,
   },
   {
     id: 2,
     title: "Blogging Site",
     text: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique, eaque!`,
     category: "Web site",
+    imgUrl: BlogImg,
   },
 ]);
 </script>
@@ -41,15 +44,15 @@ const projects = ref([
           <div
             v-for="project in projects"
             :key="project.id"
-            class="col-12 col-md-6 col-lg-4 portfolio-thumbnail mt-2"
+            class="col-12 col-md-6 col-lg-4 portfolio-thumbnail mt-0 mt-md-2"
           >
             <div class="wrapper">
               <div class="portfolio-card-inner-container">
                 <SectionPortfolioCard>
                   <template v-slot:card-header-content>
-                    <div class="thumbnail-img text-center">
-                      <img ref="imgRef" :src="PortfolioImg" alt="img" />
-                    </div>
+                    <BaseThumbnailContainer>
+                      <img :src="project.imgUrl" alt="img" class="img-fluid" />
+                    </BaseThumbnailContainer>
                   </template>
                   <template v-slot:card-title>
                     <BaseCardTitle>
@@ -66,7 +69,7 @@ const projects = ref([
                   </template>
                 </SectionPortfolioCard>
               </div>
-              <div class="thumbnail-body-background border shadow-sm"></div>
+              <!-- <div class="thumbnail-body-background border shadow-sm"></div> -->
             </div>
           </div>
         </div>
@@ -81,21 +84,25 @@ const projects = ref([
     padding-bottom: 6rem;
 
     .portfolio-thumbnail {
-      aspect-ratio: 1/1;
+      aspect-ratio: 1/0.9;
       position: relative;
+      display: flex;
+      align-items: flex-end;
 
       img {
-        width: 100%;
+        width: 96%;
+        height: 100%;
         border-radius: 5px;
-        transform: translateY(50%);
+        transform: translateY(-40%);
         transition: 0.3s all linear;
         box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1),
           0 1px 2px -1px rgb(0 0 0 / 0.1);
+        object-fit: cover;
       }
 
       &:hover {
         img {
-          transform: translateY(0%);
+          transform: translateY(-90%);
           box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
             0 8px 10px -6px rgb(0 0 0 / 0.1);
         }
