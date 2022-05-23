@@ -2,6 +2,27 @@
 import PortfolioImg from "@/assets/images/portfolio-img.jpg";
 import ProductDesignImg from "@/assets/images/product-design-img.jpg";
 import BlogImg from "@/assets/images/blog-img.jpg";
+
+const projects = ref([
+  {
+    id: 0,
+    title: "E-Commerce Design",
+    text: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique, eaque!`,
+    category: "UI/UX Design",
+  },
+  {
+    id: 1,
+    title: "Coffee Shop Branding",
+    text: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique, eaque!`,
+    category: "Product Design",
+  },
+  {
+    id: 2,
+    title: "Blogging Site",
+    text: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique, eaque!`,
+    category: "Web site",
+  },
+]);
 </script>
 
 <template>
@@ -17,39 +38,37 @@ import BlogImg from "@/assets/images/blog-img.jpg";
       </BaseSectionHeader>
       <div class="portfolio-container container">
         <div class="row">
-          <SectionPortfolioThumbnail>
-            <template v-slot:thumbnail-img>
-              <img ref="imgRef" :src="PortfolioImg" alt="img" />
-            </template>
-            <template v-slot:thumbnail-title> E-commerce Website </template>
-            <template v-slot:thumbnail-text>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Similique, eaque!
-            </template>
-            <template v-slot:thumbnail-category>UI/UX Design </template>
-          </SectionPortfolioThumbnail>
-          <SectionPortfolioThumbnail>
-            <template v-slot:thumbnail-img>
-              <img ref="imgRef" :src="ProductDesignImg" alt="img" />
-            </template>
-            <template v-slot:thumbnail-title> Coffee Shop Branding </template>
-            <template v-slot:thumbnail-text>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Similique, eaque!
-            </template>
-            <template v-slot:thumbnail-category>Product Design </template>
-          </SectionPortfolioThumbnail>
-          <SectionPortfolioThumbnail>
-            <template v-slot:thumbnail-img>
-              <img ref="imgRef" :src="BlogImg" alt="img" />
-            </template>
-            <template v-slot:thumbnail-title> Blogging Site </template>
-            <template v-slot:thumbnail-text>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Similique, eaque!
-            </template>
-            <template v-slot:thumbnail-category>Web development </template>
-          </SectionPortfolioThumbnail>
+          <div
+            v-for="project in projects"
+            :key="project.id"
+            class="col-12 col-md-6 col-lg-4 portfolio-thumbnail mt-2"
+          >
+            <div class="wrapper">
+              <div class="portfolio-card-inner-container">
+                <SectionPortfolioCard>
+                  <template v-slot:card-header-content>
+                    <div class="thumbnail-img text-center">
+                      <img ref="imgRef" :src="PortfolioImg" alt="img" />
+                    </div>
+                  </template>
+                  <template v-slot:card-title>
+                    <BaseCardTitle>
+                      <BaseLink :url="'/#'" :style="'text-secondary'">{{
+                        project.title
+                      }}</BaseLink>
+                    </BaseCardTitle>
+                  </template>
+                  <template v-slot:card-text>{{ project.text }} </template>
+                  <template v-slot:card-foot-content>
+                    <BaseCategoryLabel>{{
+                      project.category
+                    }}</BaseCategoryLabel>
+                  </template>
+                </SectionPortfolioCard>
+              </div>
+              <div class="thumbnail-body-background border shadow-sm"></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -63,22 +82,15 @@ import BlogImg from "@/assets/images/blog-img.jpg";
 
     .portfolio-thumbnail {
       aspect-ratio: 1/1;
-      display: flex;
-      flex-direction: column;
+      position: relative;
 
-      .thumbnail-img {
-        position: relative;
-        z-index: 7;
-        flex: 0.5;
-
-        img {
-          width: 90%;
-          border-radius: 5px;
-          transform: translateY(50%);
-          transition: 0.3s all linear;
-          box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1),
-            0 1px 2px -1px rgb(0 0 0 / 0.1);
-        }
+      img {
+        width: 100%;
+        border-radius: 5px;
+        transform: translateY(50%);
+        transition: 0.3s all linear;
+        box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1),
+          0 1px 2px -1px rgb(0 0 0 / 0.1);
       }
 
       &:hover {
@@ -89,38 +101,57 @@ import BlogImg from "@/assets/images/blog-img.jpg";
         }
       }
 
-      .thumbnail-body {
+      .wrapper {
         position: relative;
-        flex: 0.5;
-        width: 100%;
-        z-index: 5;
+        .portfolio-card-inner-container {
+          position: relative;
+          z-index: 6;
+        }
 
         .thumbnail-body-background {
           position: absolute;
           bottom: 0;
           left: 0;
           width: 100%;
-          height: 150%;
+          height: 60%;
           background-color: #fff;
-          z-index: 6;
           border-radius: 5px;
-
-          .thumbnail-content {
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 90%;
-            height: 60%;
-
-            .category {
-              font-size: 0.8rem;
-              width: max-content;
-              border-radius: 100px;
-            }
-          }
+          z-index: 5;
         }
       }
+
+      // .thumbnail-body {
+      //   position: relative;
+      //   flex: 0.5;
+      //   width: 100%;
+      //   z-index: 5;
+
+      //   .thumbnail-body-background {
+      //     position: absolute;
+      //     bottom: 0;
+      //     left: 0;
+      //     width: 100%;
+      //     height: 150%;
+      //     background-color: #fff;
+      //     z-index: 6;
+      //     border-radius: 5px;
+
+      //     .thumbnail-content {
+      //       position: absolute;
+      //       bottom: 0;
+      //       left: 50%;
+      //       transform: translateX(-50%);
+      //       width: 90%;
+      //       height: 60%;
+
+      //       .category {
+      //         font-size: 0.8rem;
+      //         width: max-content;
+      //         border-radius: 100px;
+      //       }
+      //     }
+      //   }
+      // }
     }
   }
 }

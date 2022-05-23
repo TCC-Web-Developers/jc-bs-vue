@@ -1,5 +1,5 @@
 <template>
-  <div class="service-card-head py-4 px-2">
+  <div>
     <slot></slot>
   </div>
 </template>

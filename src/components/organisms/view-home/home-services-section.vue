@@ -1,3 +1,26 @@
+<script setup>
+const services = ref([
+  {
+    id: 0,
+    title: "Design",
+    text: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum quia, id repellendus vitae maiores atque.`,
+    icon: "bi-briefcase-fill",
+  },
+  {
+    id: 1,
+    title: "Development",
+    text: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum quia, id repellendus vitae maiores atque.`,
+    icon: "bi-code-slash",
+  },
+  {
+    id: 2,
+    title: "Marketing",
+    text: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum quia, id repellendus vitae maiores atque.`,
+    icon: "bi-gear-wide-connected",
+  },
+]);
+</script>
+
 <template>
   <section class="services-section bg-primary">
     <div class="background-color-design bg-secondary"></div>
@@ -12,48 +35,30 @@
       </BaseSectionHeader>
       <div class="services-container">
         <div class="row">
-          <div class="col-12 border-bottom border-md-0 col-md-4 px-0">
+          <div
+            v-for="service in services"
+            :key="service.id"
+            class="col-12 border-bottom border-md-0 col-md-4 px-0"
+          >
             <SectionServiceCard>
-              <template v-slot:icon>
-                <i
-                  class="bi bi-briefcase-fill text-primary"
-                  style="font-size: 1.5rem"
-                ></i>
+              <template v-slot:card-header-content>
+                <BaseRoundedIcon :size="'3rem'" :color="'secondary'">
+                  <i
+                    :class="`bi ${service.icon} text-primary`"
+                    style="font-size: 1.5rem"
+                  ></i>
+                </BaseRoundedIcon>
               </template>
-              <template v-slot:title>Design</template>
-              <template v-slot:text>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum
-                quia, id repellendus vitae maiores atque.
+              <template v-slot:card-title>
+                <BaseCardTitle>{{ service.title }}</BaseCardTitle>
               </template>
-            </SectionServiceCard>
-          </div>
-          <div class="col-12 border-bottom border-md-0 col-md-4 px-0">
-            <SectionServiceCard>
-              <template v-slot:icon>
-                <i
-                  class="bi bi-code-slash text-primary"
-                  style="font-size: 1.5rem"
-                ></i>
+              <template v-slot:card-text>
+                <BaseCardText>{{ service.text }} </BaseCardText>
               </template>
-              <template v-slot:title>Design</template>
-              <template v-slot:text>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum
-                quia, id repellendus vitae maiores atque.
-              </template>
-            </SectionServiceCard>
-          </div>
-          <div class="col-12 border-bottom border-md-0 col-md-4 px-0">
-            <SectionServiceCard>
-              <template v-slot:icon>
-                <i
-                  class="bi bi-gear-wide-connected text-primary"
-                  style="font-size: 1.5rem"
-                ></i>
-              </template>
-              <template v-slot:title>Design</template>
-              <template v-slot:text>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum
-                quia, id repellendus vitae maiores atque.
+              <template v-slot:card-foot-content>
+                <BaseLink :url="'#'" :style="'text-secondary'"
+                  >Learn more</BaseLink
+                >
               </template>
             </SectionServiceCard>
           </div>

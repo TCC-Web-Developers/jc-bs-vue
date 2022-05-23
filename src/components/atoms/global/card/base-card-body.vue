@@ -1,5 +1,5 @@
 <template>
-  <div class="service-card-body px-2">
+  <div>
     <slot></slot>
   </div>
 </template>

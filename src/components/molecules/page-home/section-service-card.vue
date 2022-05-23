@@ -1,32 +1,22 @@
 <template>
-  <div class="service-card px-3 py-3">
-    <BaseServiceCardHead>
-      <BaseRoundedIcon :size="'3rem'" :color="'secondary'">
-        <slot name="icon"></slot>
-      </BaseRoundedIcon>
-    </BaseServiceCardHead>
-    <BaseServiceCardBody>
-      <h4 class="service-card-title text-secondary fw-bold">
-        <slot name="title"></slot>
-      </h4>
-      <p class="service-card-text"><slot name="text"></slot></p>
-    </BaseServiceCardBody>
-    <BaseServiceCardLink>
-      <BaseLink :url="'#'" :style="'text-secondary'">Learn more</BaseLink>
-    </BaseServiceCardLink>
-  </div>
+  <BaseCard class="base-card px-3 py-3" :color="'light'" :hover="true">
+    <template v-slot:card-head>
+      <BaseCardHead class="service-card-head py-4 px-2">
+        <slot name="card-header-content"></slot>
+      </BaseCardHead>
+    </template>
+    <template v-slot:card-body>
+      <BaseCardBody class="card-body px-2">
+        <slot name="card-title"></slot>
+        <slot name="card-text"></slot>
+      </BaseCardBody>
+    </template>
+    <template v-slot:card-foot>
+      <BaseCardFoot class="card-foot px-2 pb-4">
+        <slot name="card-foot-content"></slot>
+      </BaseCardFoot>
+    </template>
+  </BaseCard>
 </template>
 
-<style lang="scss" scoped>
-.service-card {
-  background-color: #fff;
-  transition: 0.2s all linear;
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0), 0 2px 4px -2px rgb(0 0 0 / 0);
-
-  &:hover {
-    transform: scale(1.04);
-    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
-      0 8px 10px -6px rgb(0 0 0 / 0.1);
-  }
-}
-</style>
+<style lang="scss" scoped></style>
